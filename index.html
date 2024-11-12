@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Cobo Custody SDK Example</title>
+    <script  src="./dist/bundle.js"></script>
+    <script  src="./build/myVite.umd.js"></script>
+    <script src="./out/time.js"></script>
+  </head>
+  <body>
+    <h1>Cobo Custody SDK Example</h1>
+    <script>
+      console.log(getSigner(), "browserify打包的");
+
+      console.log('%c%s', 'color: #00a3cc', time(), "out/time.js-我使用webpack打包的");
+      console.log(myVite.add(1, 9), "myVite.umd.js-我使用vite打包的"); // 输出 3
+    </script>
+    <script type="module">
+      import { add } from './src/math.js';
+      console.log('%c%s', 'color: #aa00ff', add(2, 3), "es6 原生模块引入");
+    </script>
+  </body>
+</html>
